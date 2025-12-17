@@ -6,12 +6,4 @@ public class Starter extends MenuItem{
 		super(name, price, description);
 		// TODO Auto-generated constructor stub
 	}
-
-	@Override
-	public String toString() {
-		return super.toString();
-	}
-	
-	
-
 }
