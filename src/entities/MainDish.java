@@ -19,7 +19,8 @@ public class MainDish extends MenuItem{
 
 	@Override
 	public String toString() {
-		return "MainDish [MenuItem="+ super.toString()+", portionSize=" + portionSize + "]";
+		return super.toString()+"\n"
+				+ "Quantité de la portion :" + portionSize;
 	}
 	
 	
