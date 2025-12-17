@@ -98,11 +98,9 @@ public class Main {
 			//print area
 			System.out.println("----------Choix Entreé----------");
 			showCard(entreeList);
-			System.out.print("Que souhaitez vous comme entrée? : ");
 			
 			//get the desired number
-			chosenI = askMenuItem(entreeList, scanner);
-			System.out.println();
+			chosenI = askMenuItem(entreeList, scanner,"Que souhaitez vous comme entrée?");
 			//put into menu list
 			menu.add("["+chosenI+" - "+entreeList.get(chosenI)+"]");
 			//end the entrees asking
@@ -110,12 +108,12 @@ public class Main {
 			
 			//---------------plat---------------
 			//print area
-			System.out.println("Choix plat:");
+			System.out.println("----------Choix plat----------");
 			showCard(platsList);
-			System.out.println("que souhaitez vous comme plat");
 			
 			//get the desired number
-			chosenI = askMenuItem(platsList, scanner);
+			chosenI = askMenuItem(platsList, scanner,"Que souhaitez vous comme plat?");
+			
 			//put into menu list
 			menu.add("["+chosenI+" - "+platsList.get(chosenI)+"]");
 			//end the entrees asking
@@ -125,10 +123,9 @@ public class Main {
 			//print area
 			System.out.println("Choix accompagnement:");
 			showCard(accompagnements);
-			System.out.println("que souhaitez vous comme accompagnement");
 			
 			//get the desired number
-			chosenI = askMenuItem(accompagnements, scanner);
+			chosenI = askMenuItem(accompagnements, scanner,"Que souhaitez vous comme accompagnement?");
 			//put into menu list
 			menu.add("["+chosenI+" - "+accompagnements.get(chosenI)+"]");
 
@@ -138,10 +135,9 @@ public class Main {
 			//print area
 			System.out.println("Choix boisson:");
 			showCard(boisson);
-			System.out.println("que souhaitez vous comme boisson");
 			
 			//get the desired number
-			chosenI = askMenuItem(boisson, scanner);
+			chosenI = askMenuItem(boisson, scanner, "Que souhaitez vous comme boisson");
 			//put into menu list
 			menu.add("["+chosenI+" - "+boisson.get(chosenI)+"]");
 
@@ -149,10 +145,9 @@ public class Main {
 			//---------------dessert---------------
 			System.out.println("Choix dessert:");
 			showCard(dessert);
-			System.out.println("que souhaitez vous comme dessert");
 			
 			//get the desired number
-			chosenI = askMenuItem(dessert, scanner);
+			chosenI = askMenuItem(dessert, scanner, "Que souhaitez vous comme dessert");
 			//put into menu list
 			menu.add("["+chosenI+" - "+dessert.get(chosenI)+"]");
 			
@@ -179,11 +174,13 @@ public class Main {
 		System.out.println();
 	}
 	
-	public static int askMenuItem(Map<Integer, ? extends MenuItem> restaurantPartCard, Scanner scanner) {
+	public static int askMenuItem(Map<Integer, ? extends MenuItem> restaurantPartCard, Scanner scanner, String question) {
 		while(true) {
+			System.out.print(question+" : ");
 			if(scanner.hasNextInt()) {
 				//get the number
 				int chosenEntreeI = scanner.nextInt();
+				System.out.println();
 				
 				//check if is in this list
 				if (chosenEntreeI > 0 && chosenEntreeI <= restaurantPartCard.size()) {
