@@ -97,10 +97,10 @@ public class Main {
 			//---------------entrees---------------
 			//print area
 			System.out.println("----------Choix Entreé----------");
-			showCard(entreeList);
+			Helper.showCard(entreeList);
 			
 			//get the desired number
-			chosenI = askMenuItem(entreeList, scanner,"Que souhaitez vous comme entrée?");
+			chosenI = Helper.askMenuItem(entreeList, scanner,"Que souhaitez vous comme entrée?");
 			//put into menu list
 			menu.add("["+chosenI+" - "+entreeList.get(chosenI)+"]");
 			//end the entrees asking
@@ -109,10 +109,10 @@ public class Main {
 			//---------------plat---------------
 			//print area
 			System.out.println("----------Choix plat----------");
-			showCard(platsList);
+			Helper.showCard(platsList);
 			
 			//get the desired number
-			chosenI = askMenuItem(platsList, scanner,"Que souhaitez vous comme plat?");
+			chosenI = Helper.askMenuItem(platsList, scanner,"Que souhaitez vous comme plat?");
 			
 			//put into menu list
 			menu.add("["+chosenI+" - "+platsList.get(chosenI)+"]");
@@ -122,10 +122,10 @@ public class Main {
 			//---------------accompagnement---------------
 			//print area
 			System.out.println("Choix accompagnement:");
-			showCard(accompagnements);
+			Helper.showCard(accompagnements);
 			
 			//get the desired number
-			chosenI = askMenuItem(accompagnements, scanner,"Que souhaitez vous comme accompagnement?");
+			chosenI = Helper.askMenuItem(accompagnements, scanner,"Que souhaitez vous comme accompagnement?");
 			//put into menu list
 			menu.add("["+chosenI+" - "+accompagnements.get(chosenI)+"]");
 
@@ -134,20 +134,20 @@ public class Main {
 			//---------------boisson---------------
 			//print area
 			System.out.println("Choix boisson:");
-			showCard(boisson);
+			Helper.showCard(boisson);
 			
 			//get the desired number
-			chosenI = askMenuItem(boisson, scanner, "Que souhaitez vous comme boisson");
+			chosenI = Helper.askMenuItem(boisson, scanner, "Que souhaitez vous comme boisson");
 			//put into menu list
 			menu.add("["+chosenI+" - "+boisson.get(chosenI)+"]");
 
 			
 			//---------------dessert---------------
 			System.out.println("Choix dessert:");
-			showCard(dessert);
+			Helper.showCard(dessert);
 			
 			//get the desired number
-			chosenI = askMenuItem(dessert, scanner, "Que souhaitez vous comme dessert");
+			chosenI = Helper.askMenuItem(dessert, scanner, "Que souhaitez vous comme dessert");
 			//put into menu list
 			menu.add("["+chosenI+" - "+dessert.get(chosenI)+"]");
 			
@@ -162,41 +162,4 @@ public class Main {
 			
 		}
 	}
-	
-	
-	public static void showCard(Map<Integer, ? extends MenuItem> cardList) {
-		for(Map.Entry<Integer, ? extends MenuItem> card : cardList.entrySet()) {
-			
-			System.out.println("---Item : "+card.getKey()+"---");
-			System.out.println(card.getValue().toString());
-			System.out.println();
-		}
-		System.out.println();
-	}
-	
-	public static int askMenuItem(Map<Integer, ? extends MenuItem> restaurantPartCard, Scanner scanner, String question) {
-		while(true) {
-			System.out.print(question+" : ");
-			if(scanner.hasNextInt()) {
-				//get the number
-				int chosenEntreeI = scanner.nextInt();
-				System.out.println();
-				
-				//check if is in this list
-				if (chosenEntreeI > 0 && chosenEntreeI <= restaurantPartCard.size()) {
-					//add menu to the list
-					return chosenEntreeI;
-				}
-				else {
-					System.out.println("L'entrée n'est pas dans la liste");
-				}
-			}
-			else {
-				System.out.println("Inserer un nombre de la liste");
-				//spend the scanner token
-				scanner.next();
-			}
-		}
-	}
-
 }
