@@ -26,6 +26,14 @@ public class Drink extends MenuItem{
 	public void setClQuantity(int clQuantity) {
 		this.clQuantity = clQuantity;
 	}
+
+
+	@Override
+	public String toString() {
+		return "Boisson alchoolique ? " + (alcohol ? "Oui" : "Non")+"\n"
+				+ super.toString()+"\n"
+				+ "Quantité en cl : " + clQuantity;
+	}
 	
 	
 
