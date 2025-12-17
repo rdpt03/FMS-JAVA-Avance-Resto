@@ -96,12 +96,13 @@ public class Main {
 			
 			//---------------entrees---------------
 			//print area
-			System.out.println("Choix Entreé:");
+			System.out.println("----------Choix Entreé----------");
 			showCard(entreeList);
-			System.out.println("que souhaitez vous comme entree");
+			System.out.print("Que souhaitez vous comme entrée? : ");
 			
 			//get the desired number
 			chosenI = askMenuItem(entreeList, scanner);
+			System.out.println();
 			//put into menu list
 			menu.add("["+chosenI+" - "+entreeList.get(chosenI)+"]");
 			//end the entrees asking
@@ -170,7 +171,10 @@ public class Main {
 	
 	public static void showCard(Map<Integer, ? extends MenuItem> cardList) {
 		for(Map.Entry<Integer, ? extends MenuItem> card : cardList.entrySet()) {
-			System.out.println("["+card.getKey()+" - "+card.getValue().toString()+"]);
+			
+			System.out.println("---Item : "+card.getKey()+"---");
+			System.out.println(card.getValue().toString());
+			System.out.println();
 		}
 		System.out.println();
 	}
