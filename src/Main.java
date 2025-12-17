@@ -63,22 +63,9 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 		
 		//ask number of menus
-		System.out.println("Bonjour, combien de menus souhaitez vous?");
-		if(scanner.hasNextInt()) {
-			//get the number of menus
-			int nOfMenus = scanner.nextInt();
-			
-			//execute the restaurant logic
-			executeRestaurant(nOfMenus, scanner);
-		}
-		else {
-			System.out.println("Numero non valide");
-		}
-		
-		
-		
-		
-		
+		int nOfMenus = Helper.askInt(scanner,"Bonjour, combien de menus souhaitez vous?");
+		//execute the restaurant logic
+		executeRestaurant(nOfMenus, scanner);
 		
 	}
 	public static void executeRestaurant(int nOfMenus, Scanner scanner) {
