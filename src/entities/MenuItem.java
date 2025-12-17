@@ -44,8 +44,8 @@ public abstract class MenuItem {
 	//-----------------
 	@Override
 	public String toString() {
-		return 	  "Nom : " + name
-				+ "\nPrix : " + price
-				+ "\nDescription : " + description;
+		return 	  "Nom : " + name + "\n"
+				+ "Prix : " + price + "\n"
+				+ "Description : " + description;
 	}
 }
