@@ -25,7 +25,8 @@ public class SideDish extends MenuItem{
 
 	@Override
 	public String toString() {
-		return "SideDish ["+super.toString()+"portionSize=" + portionSize + "]";
+		return super.toString()+"\n"
+				+ "Quantité de la portion :" + portionSize;
 	}
 	
 	
