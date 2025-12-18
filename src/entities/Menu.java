@@ -73,11 +73,13 @@ public class Menu {
 	
 	@Override
 	public String toString() {
-		return "éntree: "+this.starter.getName()+" | Prix: "+this.starter.getPrice()+
-				"Plat: "+this.mainDish.getName()+" | Prix: "+this.mainDish.getPrice()+
-				"Accompagnement: "+this.sideDish.getName()+" | Prix: "+this.sideDish.getPrice()+
-				"Boisson: "+this.drink.getName()+" | Prix: "+this.drink.getPrice()+
-				"Dessert: "+this.dessert.getName()+" | Prix: "+this.dessert.getPrice();
+		return "éntree: "+this.starter.getName()+" | Prix: "+this.starter.getPrice()+"\n"+
+				"Plat: "+this.mainDish.getName()+" | Prix: "+this.mainDish.getPrice()+"\n"+
+				"Accompagnement: "+this.sideDish.getName()+" | Prix: "+this.sideDish.getPrice()+"\n"+
+				"Boisson: "+this.drink.getName()+" | Prix: "+this.drink.getPrice()+"\n"+
+				"Dessert: "+this.dessert.getName()+" | Prix: "+this.dessert.getPrice()+"\n"+
+				"Prix menu: "+this.getFullMenuPrice();
 	}
+	
 	
 }
