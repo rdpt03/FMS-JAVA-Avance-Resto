@@ -9,12 +9,19 @@ public class Menu {
 	
 	
 	public Menu(Starter starter, MainDish mainDish, SideDish sideDish, Drink drink, Dessert dessert) {
-		super();
 		this.starter = starter;
 		this.mainDish = mainDish;
 		this.sideDish = sideDish;
 		this.drink = drink;
 		this.dessert = dessert;
+	}
+	
+	public Menu() {
+		this.starter = null;
+		this.mainDish = null;
+		this.sideDish = null;
+		this.drink = null;
+		this.dessert = null;
 	}
 	
 	
