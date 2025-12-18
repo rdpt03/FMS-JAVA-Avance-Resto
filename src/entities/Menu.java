@@ -80,12 +80,13 @@ public class Menu {
 	
 	@Override
 	public String toString() {
-		return "éntree: "+this.starter.getName()+" | Prix: "+this.starter.getPrice()+"\n"+
-				"Plat: "+this.mainDish.getName()+" | Prix: "+this.mainDish.getPrice()+"\n"+
-				"Accompagnement: "+this.sideDish.getName()+" | Prix: "+this.sideDish.getPrice()+"\n"+
-				"Boisson: "+this.drink.getName()+" | Prix: "+this.drink.getPrice()+"\n"+
-				"Dessert: "+this.dessert.getName()+" | Prix: "+this.dessert.getPrice()+"\n"+
-				"Prix menu: "+this.getFullMenuPrice();
+		return 
+				this.starter.getPrice()+	" - "+this.starter.getName()+"\n"+
+				this.mainDish.getPrice()+	" - "+this.mainDish.getName()+"\n"+
+				this.sideDish.getPrice()+	" - "+this.sideDish.getName()+"\n"+
+				this.drink.getPrice()+		" - "+this.drink.getName()+"\n"+
+				this.dessert.getPrice()+	" - "+this.dessert.getName()+"\n"+
+				"-> Prix menu: "+this.getFullMenuPrice();
 	}
 	
 	
