@@ -57,6 +57,20 @@ public class Menu {
 		this.dessert = dessert;
 	}
 	
+	
+	public double getFullMenuPrice() {
+	    double total = 0;
+
+	    if (starter != null) total += starter.getPrice();
+	    if (mainDish != null) total += mainDish.getPrice();
+	    if (sideDish != null) total += sideDish.getPrice();
+	    if (drink != null) total += drink.getPrice();
+	    if (dessert != null) total += dessert.getPrice();
+
+	    return total;
+	}}
+	
+	
 	@Override
 	public String toString() {
 		return "éntree: "+this.starter.getName()+" | Prix: "+this.starter.getPrice()+
