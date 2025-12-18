@@ -8,6 +8,7 @@ import entities.Drink;
 import entities.MainDish;
 import entities.Menu;
 import entities.MenuItem;
+import entities.Order;
 import entities.SideDish;
 import entities.Starter;
 
@@ -72,13 +73,13 @@ public class Main {
 	public static void executeRestaurant(int nOfMenus, Scanner scanner) {
 		//vars
 		int nOrder = 1;
-		//list of menus (menu is a list of different plates
-		ArrayList<Menu> menusList = new ArrayList<>();
-		
+
+		//create order
+		Order order = new Order();
 		for(int i = 0; i < nOfMenus; i++) {
-			System.out.println("Commande numéro "+(i+1));
+			System.out.println("----------Commande numéro "+(i+1)+"----------");
+			
 			//var zone
-			//ArrayList<String> menu = new ArrayList<>();
 			int chosenI;
 			
 			//create menu
@@ -145,12 +146,12 @@ public class Main {
 			
 			
 			//---------------add menu to list---------------
-			menusList.add(menu);
+			order.addMenu(menu);
 			nOrder++;
 			
 			
 			//show order
-			System.out.println("La commande : \n"+menusList);
+			System.out.println("La commande : \n"+order);
 			
 		}
 	}
