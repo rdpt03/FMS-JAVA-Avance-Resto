@@ -68,7 +68,7 @@ public class Menu {
 	    if (dessert != null) total += dessert.getPrice();
 
 	    return total;
-	}}
+	}
 	
 	
 	@Override
