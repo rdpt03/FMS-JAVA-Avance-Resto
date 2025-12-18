@@ -6,6 +6,7 @@ import java.util.Scanner;
 import entities.Dessert;
 import entities.Drink;
 import entities.MainDish;
+import entities.Menu;
 import entities.MenuItem;
 import entities.SideDish;
 import entities.Starter;
@@ -72,13 +73,16 @@ public class Main {
 		//vars
 		int nOrder = 1;
 		//list of menus (menu is a list of different plates
-		ArrayList<ArrayList<? extends String>> menusList = new ArrayList<>();
+		ArrayList<Menu> menusList = new ArrayList<>();
 		
 		for(int i = 0; i < nOfMenus; i++) {
 			System.out.println("Commande numéro "+(i+1));
 			//var zone
-			ArrayList<String> menu = new ArrayList<>();
+			//ArrayList<String> menu = new ArrayList<>();
 			int chosenI;
+			
+			//create menu
+			Menu menu = new Menu();
 			
 			
 			//---------------entrees---------------
@@ -89,7 +93,8 @@ public class Main {
 			//get the desired number
 			chosenI = Helper.askMenuItem(entreeList, scanner,"Que souhaitez vous comme entrée?");
 			//put into menu list
-			menu.add("["+chosenI+" - "+entreeList.get(chosenI)+"]");
+			menu.setStarter(entreeList.get(chosenI));;
+			
 			//end the entrees asking
 				
 			
@@ -102,7 +107,7 @@ public class Main {
 			chosenI = Helper.askMenuItem(platsList, scanner,"Que souhaitez vous comme plat?");
 			
 			//put into menu list
-			menu.add("["+chosenI+" - "+platsList.get(chosenI)+"]");
+			menu.setMainDish(platsList.get(chosenI));;
 			//end the entrees asking
 			
 			
@@ -114,7 +119,7 @@ public class Main {
 			//get the desired number
 			chosenI = Helper.askMenuItem(accompagnements, scanner,"Que souhaitez vous comme accompagnement?");
 			//put into menu list
-			menu.add("["+chosenI+" - "+accompagnements.get(chosenI)+"]");
+			menu.setSideDish(accompagnements.get(chosenI));
 
 			
 			
@@ -126,7 +131,7 @@ public class Main {
 			//get the desired number
 			chosenI = Helper.askMenuItem(boisson, scanner, "Que souhaitez vous comme boisson");
 			//put into menu list
-			menu.add("["+chosenI+" - "+boisson.get(chosenI)+"]");
+			menu.setDrink(boisson.get(chosenI));
 
 			
 			//---------------dessert---------------
@@ -136,7 +141,7 @@ public class Main {
 			//get the desired number
 			chosenI = Helper.askMenuItem(dessert, scanner, "Que souhaitez vous comme dessert");
 			//put into menu list
-			menu.add("["+chosenI+" - "+dessert.get(chosenI)+"]");
+			menu.setDessert(dessert.get(chosenI));
 			
 			
 			//---------------add menu to list---------------
